@@ -32,11 +32,6 @@ Parameters:
     Description: Arn
 
   DefaultTTL:
-    Type: Number
-    Description: Default Time in Seconds to cache objects
-    Default: 86400
-    MinValue: 0
-    MaxValue: 31536000
 
   MaxTTL:
     Type: Number
