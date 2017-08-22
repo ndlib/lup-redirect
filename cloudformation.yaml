@@ -1,6 +1,6 @@
 ---
 AWSTemplateFormatVersion: '2010-09-09'
-
+Description: CloudFormation for a web site redirection
 
 Metadata:
 
@@ -26,12 +26,10 @@ Parameters:
   DomainName:
     Type: String
     Description: FQDN
-    Default: ''
 
   CertificateArn:
     Type: String
     Description: Arn
-    Default: arn:aws:acm:us-east-1:333680067100:certificate/9f20a979-8996-43e7-9c92-b9a0b4999345
 
   DefaultTTL:
     Type: Number
@@ -90,7 +88,7 @@ Resources:
     Type: AWS::CloudFront::Distribution
     Properties:
       DistributionConfig:
-        Comment: !Ref FQDN
+        Comment: !Ref DomainName
         CustomErrorResponses:
           - ErrorCode: 404
             ResponseCode: 200
